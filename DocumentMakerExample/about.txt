@@ -1,0 +1,1 @@
+﻿This example is made by the same developer who developed DocumentMaker library, a.k.a. Paolo Cattaneo, myself. If you need any help in using this library, or you want to know more about me, or if you are a headhunter looking for a passionate Software Engineer for your company (I live in Milan, Italy) feel free to contact me:

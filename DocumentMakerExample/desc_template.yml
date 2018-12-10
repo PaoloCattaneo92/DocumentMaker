@@ -1,0 +1,44 @@
+﻿BaseText: This course is held by the teacher $_teacher_name_$ $_teacher_last_name_$. Lessons are on $_lesson_day_$ from $_start_hour_$ to $_end_hour_$. You can contact $_teacher_last_name_$ at $_teacher_mail_$.
+Results:
+ - IdResult: "Csharp development"
+   TemplateItems:
+    - Key: teacher_name
+      Val: Paolo
+    - Key: teacher_last_name
+      Val: Cattaneo
+    - Key: lesson_day
+      Val: Monday
+    - Key: start_hour
+      Val: 08:30
+    - Key: end_hour
+      Val: 12:30
+    - Key: teacher_mail
+      Val: paolo.cattaneo92@gmail.com
+ - IdResult: "Python  development"
+   TemplateItems:
+    - Key: teacher_name
+      Val: Eleanor
+    - Key: teacher_last_name
+      Val: Kent
+    - Key: lesson_day
+      Val: Thursday
+    - Key: start_hour
+      Val: 11:00
+    - Key: end_hour
+      Val: 16:00
+    - Key: teacher_mail
+      Val: eleanor.kent.notarealmail@gmail.com
+ - IdResult: "Machine Learning"
+   TemplateItems:
+    - Key: teacher_name
+      Val: Nicolas
+    - Key: teacher_last_name
+      Val: Ghio
+    - Key: lesson_day
+      Val: Friday
+    - Key: start_hour
+      Val: 12:00
+    - Key: end_hour
+      Val: 18:00
+    - Key: teacher_mail
+      Val: nicolas.ghio.notarealmail@gmail.com
