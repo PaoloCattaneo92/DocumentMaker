@@ -5,10 +5,12 @@
     <RootNamespace>PaoloCattaneo.DocumentMaker</RootNamespace>
     <Authors>Paolo Cattaneo (https://github.com/PaoloCattaneo92)</Authors>
     <Description>A C# library used to create MD and HTML documents directly from code using your data objects.</Description>
-    <PackageLicenseUrl></PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/PaoloCattaneo92/DocumentMaker/blob/master/LICENSE</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/PaoloCattaneo92/DocumentMaker/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/PaoloCattaneo92/DocumentMaker</PackageProjectUrl>
     <RepositoryUrl>https://github.com/PaoloCattaneo92/DocumentMaker/</RepositoryUrl>
     <PackageTags>markdown, html, document, template, editor, from code</PackageTags>
+    <NeutralLanguage>en</NeutralLanguage>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

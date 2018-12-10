@@ -7,14 +7,16 @@ have some data organized in class objects and you want to create a document repo
 >Always remember that the visual effect strictly depends on the CSS you attach to the HTML file.
 
 ## Installation
-With Package Manager:
+With **Package Manager**:
 ```
-Install-Package MarkDownEditor -Version 1.0.0 
+Install-Package DocumentMaker -Version 1.0.1 
 ```
-With .NET CLI:
+With **.NET CLI**:
 ```
-dotnet add package MarkDownEditor --version 1.0.0 
+dotnet add package DocumentMaker --version 1.0.1 
 ```
+
+**Manually check it out** at [Nuget.org](https://www.nuget.org/packages/DocumentMaker/)
 
 
 
