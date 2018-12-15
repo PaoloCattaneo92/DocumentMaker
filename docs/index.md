@@ -1,10 +1,7 @@
 # DocumentMaker
-## What is it
 This library is used to create `.md` and `.html` document files from `C# `code, a technique very useful
 when you
 have some data organized in class objects and you want to create a document report for them.
-
->Always remember that the visual effect strictly depends on the CSS you attach to the HTML file.
 
 ## Installation
 With **Package Manager**:
@@ -18,9 +15,7 @@ dotnet add package DocumentMaker --version 1.0.1
 
 **Manually check it out** at [Nuget.org](https://www.nuget.org/packages/DocumentMaker/)
 
-
-
-### Dependecies
+Dependencies:
 - [Markdig](https://github.com/lunet-io/markdig) (used to render MarkDown in HTML)
 - [YamlDotNet](https://github.com/aaubry/YamlDotNet) (used to read templates from YAML)
 
@@ -40,30 +35,6 @@ document.AddSection(helloSec);     //add the section to the document
 Console.WriteLine(document.Render());   //this renders the MarkDown document
 Console.WriteLine(document.RenderToHtml());   //this renders the HTML document
 ```
-
-
-## Features
-With _DocumentMaker_: you can currently create organised documents with:
-
-- A [Document](##Document) with layers of [Sections](##Section)
-- Formatted text with static [TextFormat](##TextFormat) class
-- Text [Paragraph](##Paragraph)
-- [Quote](##Quote)
-- [Horizontal break line](##Horizontal-break-line)
-- [Lists](##Lists) (with dots, numbers, letters, roman letters)
-- [Task list](##Task-List)
-- [Link](##Link) (to webpages, to sections of the document and even "mailto" links)
-- [Table](##Table)
-- [Image](##Image)
-- [Templates](##Template)
-- [Mathematical function](##Mathematical-function) (work in progress)
-
-Also if you need your custom content you can extend `RenderedObject` in your 
-own Object and add it to the document.
-
-# Document components
-In this section I will show every component of the library and how to use it. 
-Use the list provided in [Features] if you need a specific feature.
 
 ## Document
 You will add all your data content to this object, that will be rendered in MD or HTML.
@@ -113,15 +84,11 @@ of a document structure could be:
 
 As you can see each Section can contain nested sub-Sections.
 
-### Create a Section
-
-
 ```csharp
 var sec1 = new Section("1. First Section"); //default heading level 1
 var sec11 = new Section("1.1 Its first subsection", 2);
 ```
 
-### Adding content to a Section
 Using the `Add` method you can add to a Section everything that extends the main class `RenderableObject`, such
 as a component that you can find in this guide or a custom one you implemented.
 
@@ -134,7 +101,6 @@ secMain.AddParagraph("Some text");
 secMain.Add(myTable);
 ```
 
-### Adding a sub-Section
 You can add a subsection to a bigger one using the `AddSection` method.
 
 ```csharp
@@ -147,8 +113,6 @@ sec1.AddSection(sec11)
 
 //Add some content to the Sections
 ```
-
-[Back to all Features list](##features)
 
 ## TextFormat
 This static class contains method used to change
@@ -195,9 +159,6 @@ testString = TextFormat.ReplaceItalic(testString, "bar");
 
 foo _bar_ baz
 
-[Back to all Features list](##Features)
-
-
 ## Paragraph
 A `Paragraph` object contains a text string. You can add it to the Document using  `AddParagraph`.
 
@@ -214,7 +175,6 @@ document.AddParagraph(file);    //all text of this file will be added as a Parag
 
 This text was inside the file parameter and now it stands as a paragraph in the document.
 
-[Back to all Features list](##Features)
 
 ## Quote
 A quote string is added directly to a Document or to a Section using `AddQuote` method.
@@ -227,8 +187,6 @@ document.AddQuote("This is a quote")
 ##### Output:
 
 > This is a quote
-
-[Back to all Features list](##Features)
 
 ## Horizontal break line
 An horizontal break line, also called thematic break, is added directly to the Document using `AddHr` method.
@@ -249,8 +207,6 @@ First paragraph
 Second paragraph
 
 
-[Back to all Features list](##Features)
-
 ## Lists
 With _Document Maker_ you can add differnt types of Lists. They all works the same. 
 
@@ -264,8 +220,8 @@ Read specific examples to see them in action.
 
 
 
-### DotList
-##### Code:
+#### DotList
+#### Code:
 ```csharp
 var dotList = new DotList("A", "B", "C");
 ```
@@ -276,8 +232,8 @@ var dotList = new DotList("A", "B", "C");
 - B
 - C
 
-### LetterList
-##### Code:
+#### LetterList
+#### Code:
 ```csharp
 var letterList = new LetterList();
 letterList.Type = LetterType.LOWERCASE;
@@ -287,7 +243,7 @@ letterList.AddItem("C");
 
 ```
 
-##### Output:
+#### Output:
 
 a. A
 b. B
@@ -297,22 +253,22 @@ c. C
 #### Remarks
 If there are more than 26 items in the list the letter will cycle the alphabet (A-B...-Z-A-B...).
 
-### NumberList
-##### Code:
+#### NumberList
+#### Code:
 ```csharp
 var numberList = new NumberList();
 string[] itemsSource = new string[]{"A", "B", "C"};
 numberList.Items = itemSource;
 ```
 
-##### Output:
+#### Output:
 
 1. A
 2. B
 3. C
 
-### RomanList
-##### Code:
+#### RomanList
+#### Code:
 ```csharp
 var romanList = new RomanList();
 string[] itemsSource = new string[]{"A", "B", "C"};
@@ -322,7 +278,7 @@ foreach(sring s in itemSource)
 }
 ```
 
-##### Output:
+#### Output:
 
 I. A
 II. B
@@ -331,7 +287,7 @@ III. C
 #### Remarks
 Only values up to 10 (X) are supported at the moment.
 
-### Task List
+#### Task List
 This is a list of `Task` Objects.
 
 ##### Code:
@@ -348,7 +304,7 @@ var taskList = new TaskList(task0, task1, task2);
 - [ ] B
 - [X] C
 
-### Auto mapping list
+#### Auto mapping list
 ##### Code:
 ```csharp
 // Example data classes
@@ -392,8 +348,6 @@ There are AutoMap version of all the types of lists.
 Each property will be rendered with its `ToString()` method, if you have your own types you should
 override those so that you won't end up with simple memory addresses.
 
-[Back to all Features list](##Features)
-
 ## Link
 Rendering a link is really easy. A Link can have its shown text equals to or different from the 
 link itself.
@@ -411,7 +365,7 @@ var link = new DocLink( "https://github.com/PaoloCattaneo92/DocumentMaker",
 ##### Output:
 [DocumentMaker](https://github.com/PaoloCattaneo92/DocumentMaker)
 
-### MailToLink
+#### MailToLink
 This specific class is used to render "mailto:" links.
 > This will be rendered directly in HTML even in MarkDown rendering
 
@@ -423,11 +377,10 @@ var link = new MailToLink("email@address.com", "Contact me");
 ##### Output:
 <a href="mailto:email@address.com">Contact me</a>
 
-[Back to all Features list](##Features)
-
 ## Image
 An image is very similar to a link, but it will be rendered directly in HTML code, 
 even if you are rendering MarkDown only.
+
 ##### Code:
 ```csharp
 var image = new Image(  "https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png", //source of the pic
@@ -439,8 +392,6 @@ var image = new Image(  "https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%2
 
 ##### Output:
 <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png" alt="This is Lenna" width="100" heigth="100" />
-
-[Back to all Features list](##Features)
 
 ## Table
 One of the best way to organize your data is in table format. This class really helps you to 
@@ -456,21 +407,21 @@ var table = new Table(rows, columns);
 
 > The count for rows and columns are for data alone, excluding the headers
 
-### TableAlignment
+#### TableAlignment
 You can assign an allignement for all the table or for a specific column only.
 ```csharp
 table.SetAlignement(TableAlignement.CENTER);    //all columns are centered
 table.SetAlignement(0, TableAlignement.RIGHT);  //first column is right aligned
 ```
 
-### Headers
+#### Headers
 You can set headers with `SetHeaders` method.
 
 ```csharp
 table.SetHeaders("First column", "Second column", "Third column");
 ```
 
-### Table content
+#### Table content
 You can set content inside the table with the following methods:
 ```csharp 
 - SetRow(int row, params string[] contents)
@@ -485,13 +436,13 @@ You can set content inside the table with the following methods:
 ``` 
 The set values are stored inside the property `ContentMarix`.
 
-### No Content Renderable
+#### No Content Renderable
 If your table has, for some reason, 0 rows, its `NoContentRenderable` object will be rendered instead.
 
 The default "nothing here" value is a paragraph that says _"This table is empty"_ but you can modify it, or
 set it to null (in this case nothing will be rendered if the table has no content).
 
-### Automapping table
+#### Automapping table
 Using this feature you can parse a list of Objects and automatically map their properties and values in a table.
 
 The table generated in this way will have the Property names as headers.
@@ -527,8 +478,6 @@ Second|3|4
 Third|5|6
 
 
-[Back to all Features list](##Features)
-
 ## Template
 A Template is a piece of text that may be repeated with only a little bit of 
 values (from data Objects) put inside.
@@ -542,7 +491,7 @@ A Template is composed by:
 - Keys
 - Values
 
-### Template BaseText
+#### Template BaseText
 This property is the base text filled with the _keys_ that will be repleced, in the different 
 _results_ with the proper _value_.
 
@@ -552,13 +501,13 @@ In the example provided the base text is:
 This course is held by the teacher $_teacher_name_$ $_teacher_last_name_$. Lessons are on $_lesson_day_$ from $_start_hour_$ to $_end_hour_$. You can contact $_teacher_last_name_$ at $_teacher_mail_$.
 ``` 
 
-### Template Keys
+#### Template Keys
 The keys are put inside the base text itself at the place where the correspundant
 value need to be placed. They are closed between a starting `$_` and a closing `_$`
 
 > You can modify the starting/closing substrings accesing the properties OpenTemplateSign and CloseTemplateSign respectively
 
-### Results and Values
+#### Results and Values
 A Result of a Template is a set of key/values that can fill the Template.
 
 In the example provided a valid result is the set of TemplateItems:
@@ -580,7 +529,7 @@ In the example provided a valid result is the set of TemplateItems:
       Val: paolo.cattaneo92@gmail.com
 ``` 
 
-### Creating a Template from code
+#### Creating a Template from code
 As always you can create a Template and TemplateItems directly from code using the data objects.
 
 ```csharp
@@ -595,11 +544,11 @@ temp.AddResult(ressult);
 temp.ResultSingleID = "PaoloID";    //identifies the result to render
 ```
 
-### Creating a Template from YAML
+#### Creating a Template from YAML
 You can load a full Template (with keys and values) from a YAML file, as it's done in the downloadable
 example.
 
-YAML FILE:
+#### YAML FILE:
 ```
 BaseText: This course is held by the teacher $_teacher_name_$ $_teacher_last_name_$. Lessons are on $_lesson_day_$ from $_start_hour_$ to $_end_hour_$. You can contact $_teacher_last_name_$ at $_teacher_mail_$.
 Results:
@@ -626,28 +575,24 @@ Results:
     - Key: lesson_day
     ....
 ```
-CODE:
+#### CODE:
 ```csharp
 var descTemplate = TemplateFromYaml.ReadFromYaml(EXAM_DETAIL_DESC_YAML);
 ```
 
 
-### Template Render Mode
+#### Template Render Mode
 Template can be rendered in 2 main ways, setting the `RenderMode`property:
 1. **SINGLE**: only the Result with the `ResultID` equals to the Template `ResultSingleID` will be rendered
 2. **ALL**: all the Results in the Template will be Rendered, following the order they appear in the list
 
-
-[Back to all Features list](##Features)
 
 ## Mathematical Function
 This features is provided by the static class `DocMath` with
 its methods `OneLine` and `MultiLine`, but it's still unter development
 and may not work as intended.
 
-[Back to all Features list](##Features)
-
-# Known Bugs
+## Known Bugs
 This list of bugs is currently being investigated and will be fixed as soon as possible.
 
 Of course if you find others you are kindly invited to open an issue here on Github or contact
