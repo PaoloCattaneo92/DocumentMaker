@@ -36,7 +36,7 @@ namespace PaoloCattaneo.DocumentMaker
         /// <returns>The same StringBuilder but with this content appendend</returns>
         public override StringBuilder Render(StringBuilder sb)
         {
-            return sb.Append(BaseText).Append("\n\n");
+            return sb.Append(BaseText).Append(DocumentMakerConstants.DOUBLE_NEW_LINE);
         }
     }
 }

@@ -41,7 +41,7 @@ namespace PaoloCattaneo.DocumentMaker
             int num = 1;
             foreach (string item in Items)
             {
-                sb.Append(num++).Append(". ").Append(item).Append("\n");
+                sb.Append(num++).Append(". ").Append(item).Append(DocumentMakerConstants.NEW_LINE);
             }
             return sb;
         }

@@ -43,7 +43,7 @@ namespace PaoloCattaneo.DocumentMaker
             int i = 0;
             foreach (string item in Items)
             {
-                sb.Append(ROMAN_VALS[i++]).Append(". ").Append(item).Append("\n");
+                sb.Append(ROMAN_VALS[i++]).Append(". ").Append(item).Append(DocumentMakerConstants.NEW_LINE);
                 i = (i + 1) % ROMAN_VALS.Length;
             }
             return sb;

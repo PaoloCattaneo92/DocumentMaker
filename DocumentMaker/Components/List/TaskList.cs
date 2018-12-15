@@ -81,7 +81,7 @@ namespace PaoloCattaneo.DocumentMaker
                     sb.Append("X] ");
                 else
                     sb.Append(" ] ");
-                sb.Append(task.Text).Append("\n");
+                sb.Append(task.Text).Append(DocumentMakerConstants.NEW_LINE);
             }
             return sb;
         }

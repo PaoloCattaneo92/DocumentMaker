@@ -63,7 +63,7 @@ namespace PaoloCattaneo.DocumentMaker
             int index = 0;
             foreach (string item in Items)
             {
-                sb.Append(ALPHABET[Type][index]).Append(". ").Append(item).Append("\n");
+                sb.Append(ALPHABET[Type][index]).Append(". ").Append(item).Append(DocumentMakerConstants.NEW_LINE);
                 index = (index + 1) % ALPHABET[Type].Length;
             }
             return sb;

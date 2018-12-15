@@ -303,7 +303,7 @@ namespace PaoloCattaneo.DocumentMaker
             if (ContentMatrix != null)
             {
                 RenderAlignment();
-                sb.Append("\n");
+                sb.Append(DocumentMakerConstants.NEW_LINE);
                 for (int row = 0; row < Rows; row++)
                 {
                     for (int col = 0; col < Columns; col++)
@@ -314,9 +314,9 @@ namespace PaoloCattaneo.DocumentMaker
                             sb.Append(COL_SEP);
                         }
                     }
-                    sb.Append("\n");
+                    sb.Append(DocumentMakerConstants.NEW_LINE);
                 }
-                sb.Append("\n\n");
+                sb.Append(DocumentMakerConstants.DOUBLE_NEW_LINE);
             }
             else
             {

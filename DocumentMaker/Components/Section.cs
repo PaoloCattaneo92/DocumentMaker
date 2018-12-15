@@ -48,7 +48,7 @@ namespace PaoloCattaneo.DocumentMaker
             {
                 sb.Append(DocumentMakerConstants.HEADING_CHAR);
             }
-            sb.Append(" ").Append(HeaderTitle).Append("\n");
+            sb.Append(" ").Append(HeaderTitle).Append(DocumentMakerConstants.NEW_LINE);
             return sb;
         }
 
