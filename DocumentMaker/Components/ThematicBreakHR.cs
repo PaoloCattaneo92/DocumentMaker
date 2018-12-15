@@ -11,7 +11,7 @@ namespace PaoloCattaneo.DocumentMaker
     {
         public override StringBuilder Render(StringBuilder sb)
         {
-            return sb.Append("\n\n").Append(DocumentMakerConstants.HR).Append("\n\n");
+            return sb.Append(DocumentMakerConstants.DOUBLE_NEW_LINE).Append(DocumentMakerConstants.HR).Append(DocumentMakerConstants.DOUBLE_NEW_LINE);
         }
     }
 }

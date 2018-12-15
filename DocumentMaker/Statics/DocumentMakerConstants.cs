@@ -10,6 +10,8 @@ namespace PaoloCattaneo.DocumentMaker
     /// </summary>
     public static class DocumentMakerConstants
     {
+        public static readonly string NEW_LINE = "\n";
+        public static readonly string DOUBLE_NEW_LINE = NEW_LINE + NEW_LINE;
         public static readonly string MD_EXTENSION_FILE = ".md";
         public static readonly string HEADING_CHAR = "#";
         public static readonly string BOLD = "**";

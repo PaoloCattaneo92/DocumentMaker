@@ -158,13 +158,13 @@ namespace PaoloCattaneo.DocumentMaker
                     {
                         buff = buff.Replace(OpenTemplateSign + item.Key + CloseTemplateSign, item.Val);
                     }
-                    sb.Append(buff).Append("\n\n");
+                    sb.Append(buff).Append(DocumentMakerConstants.DOUBLE_NEW_LINE);
                 }
             }
             else
             {
                 if (Results?.Count == 0 || ResultSingleID == null) return sb;
-                sb.Append("\n");
+                sb.Append(DocumentMakerConstants.NEW_LINE);
                 string buff = tempText;
                 foreach (TemplateItem item in
                             Results.First(x => x.IdResult == ResultSingleID).TemplateItems)

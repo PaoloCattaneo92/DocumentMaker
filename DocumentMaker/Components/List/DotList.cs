@@ -33,7 +33,7 @@ namespace PaoloCattaneo.DocumentMaker
         {
             foreach (string item in Items)
             {
-                sb.Append(ItemDot).Append(" ").Append(item).Append("\n");
+                sb.Append(ItemDot).Append(" ").Append(item).Append(DocumentMakerConstants.NEW_LINE);
             }
             return sb;
         }

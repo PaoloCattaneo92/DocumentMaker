@@ -31,10 +31,10 @@ namespace PaoloCattaneo.DocumentMaker
         public static string MultiLine(string text)
         {
             var sb = new StringBuilder();
-            sb.Append("\n")
-                .Append(DocumentMakerConstants.MATH).Append("\n")
+            sb.Append(DocumentMakerConstants.NEW_LINE)
+                .Append(DocumentMakerConstants.MATH).Append(DocumentMakerConstants.NEW_LINE)
                 .Append(text)
-                .Append("\n").Append(DocumentMakerConstants.MATH);
+                .Append(DocumentMakerConstants.NEW_LINE).Append(DocumentMakerConstants.MATH);
             return sb.ToString();
         }
     }

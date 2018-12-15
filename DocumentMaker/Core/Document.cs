@@ -106,7 +106,7 @@ namespace PaoloCattaneo.DocumentMaker
         public override StringBuilder Render(StringBuilder sb)
         {
             //Style first
-            sb.Append(cssStyle).Append("\n\n");
+            sb.Append(cssStyle).Append(DocumentMakerConstants.DOUBLE_NEW_LINE);
             //Main document content
             foreach(IRenderable renderable in Content)
             {

@@ -85,9 +85,9 @@ namespace PaoloCattaneo.DocumentMaker
         public static string CodeMultiline(string original, string codeName)
         {
             var sb = new StringBuilder();
-            sb.Append(DocumentMakerConstants.CODE_MULTILINE).Append(codeName).Append("\n")
+            sb.Append(DocumentMakerConstants.CODE_MULTILINE).Append(codeName).Append(DocumentMakerConstants.NEW_LINE)
                 .Append(original)
-                .Append(DocumentMakerConstants.CODE_MULTILINE).Append("\n");
+                .Append(DocumentMakerConstants.CODE_MULTILINE).Append(DocumentMakerConstants.NEW_LINE);
             return sb.ToString();
         }
         /// <summary>
