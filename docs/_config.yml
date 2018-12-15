@@ -1,1 +1,7 @@
 theme: jekyll-theme-leap-day
+
+title: DocumentMaker
+
+description: This library is used to create MD and HTML document files and fill them with information and data directly from C# code.
+
+show_downloads: true
