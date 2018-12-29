@@ -4,6 +4,8 @@ This library is used to create `.md` and `.html` document files from `C# `code, 
 when you
 have some data organized in class objects and you want to create a document report for them.
 
+ <img src="documentmaker.png" alt="This should be a real pic" /> 
+
 >Always remember that the visual effect strictly depends on the CSS you attach to the HTML file.
 
 ## Installation
@@ -17,7 +19,6 @@ dotnet add package DocumentMaker --version 1.0.1
 ```
 
 **Manually check it out** at [Nuget.org](https://www.nuget.org/packages/DocumentMaker/)
-
 
 
 ### Dependecies
